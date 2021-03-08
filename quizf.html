@@ -1,0 +1,460 @@
+
+<!DOCTYPE html>
+<html lang="ko" >
+
+<head>
+
+  <meta charset="UTF-8">
+ 
+
+  <title>quiz</title>
+  
+<style>
+body{
+  margin:5;
+   padding:0; 
+  font-size:16px;
+  
+}
+.jQueryImg{
+  margin-top: 3%;
+  margin-bottom:3%;
+  position: relative;
+  /*left: 50%;*/
+  display : block;
+  margin : auto;
+}
+
+ footer {
+  margin-top:1%;
+  margin-bottom:1%;
+   height:60px;
+}
+#startButton{ /* 시작버튼 꾸미기 */
+  /*margin-top:20%;
+  margin-left: 50%;*/
+display : block;
+margin : auto;
+font-size: 100px;
+padding: 5px;
+  color:white;
+  background: green;
+  border-radius: 20px;
+}
+
+#question1{
+  margin-top:3%;
+}
+/*button{
+  margin-top:1%;
+}*/
+.cov-text{
+text-align: center;
+font-size: 30px;
+}
+.btn-success{
+  margin-top:2%;
+  margin-bottom:1%;
+  text-align:center;
+}
+
+.display-none{
+  display:none; 
+}
+.align-left{
+  text-align:left;
+}
+#wrong{
+  margin-top:1%;
+  color:#d9534f;  
+  font-weight:bold;
+}
+#correct{
+  margin-top:1%;
+  color:#5cb85c ;  
+  font-weight:bold;
+}
+#choose{
+  color:#428bca;
+}
+main{
+   min-height: calc(100vh - 60px);
+}
+</style>
+
+  <script>
+  window.console = window.console || function(t) {};
+</script>
+
+  
+  
+  <script>
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage("resize", "*");
+  }
+</script>
+
+
+</head>
+
+<body translate="no" >
+  <main>
+<!--<div class="container text-center" id="test" >-->
+  <div>
+    <div id="mainContainer">
+      
+        <img src="cover.jpg" alt="jQuery" class="jQueryImg">
+        <p class="cov-text">추억의 세계로 모십니다!</p>
+     
+      
+        <button id="startButton">QUIZ 시작</button>
+
+    </div>
+  
+    <div id="questions">
+      <!--=============================================question1-->
+          <article id = "question1" class="display-none">
+               <div class="col-xs-12 col-md-8 col-md-offset-2"> <p>1. 다음 사진은 어디일까요?</p>
+                      <br>
+                     <img src="1.jpg" alt="img" class="quizimg">
+                 </div>
+      <div>
+        
+      <form id="form1" action="#">
+        <input type="radio" name="answer" value="0">후쿠오카<br/>
+        <input type="radio" name="answer" value="1">뱃부<br>
+        <input type="radio" name="answer" value="0">소창성<br/>
+        <input type="radio" name="answer" value="0">창평지<br>
+        <input id="button1" type="submit" class="btn btn-success" value="답은 바로오! 눌러주시고!"> 
+          </form>      
+       </div>
+     
+      </article>
+<!--=============================================question2-->
+  <article id = "question2" class="display-none"> 
+      <figure>
+             <div>
+              <p>2. 어디 일까요?
+              </p>  </div>
+              <p class="text-center"> 아름다운 기억을 떠올려 보세요!!</p> 
+              
+        <img src="2.jpg" alt="img" class="quizimg"> 
+   
+    </figure>
+          <form id="form2" action="#">
+            
+            <input type="radio" name="answer" value="0">후쿠오카<br>
+            <input type="radio" name="answer" value="0">뱃부<br>
+            <input type="radio" name="answer" value="1">소창성<br>
+            <input type="radio" name="answer" value="0">창평지<br>
+         <input type="submit"  class="btn btn-success text-center" value="답은 바로오! 눌러주시고!"> 
+
+          </form>
+ 
+  </article>
+      <!--=============================================question3-->
+  <article class="display-none">
+    <figure>
+      <div>
+      <p class="align-left">3. 기억을 떠올려 보시고 </p>
+        </div>
+      <p>
+        맞추어 보세요 ^0^
+      </p>
+      <img src="3.jpg" alt="img" class="quizimg"> 
+    </figure>
+    <form action="#">
+            <input type="radio" name="answer" value="1">유휴인<br>
+            <input type="radio" name="answer" value="0">뱃부<br>
+            <input type="radio" name="answer" value="0">소창성<br>
+            <input type="radio" name="answer" value="0">후쿠오카<br>
+            <input type="submit"  class="btn btn-success" value="답은 바로오! 눌러주시고!"> 
+
+          </form>
+  </article>
+      <!--=============================================question4-->
+      <article class="display-none">
+        <figure>
+           <p>4. 국내일까요?
+                  <br>
+               
+      </p>
+          <p>
+            해외 일까요?
+          </p>
+          <img src="4.jpg" alt="img" class="quizimg"> 
+        </figure>
+        <form action="#">
+            <input type="radio" name="answer" value="0">유후인<br>
+            <input type="radio" name="answer" value="0">뱃부<br>
+            <input type="radio" name="answer" value="0">후쿠오카<br>
+            <input type="radio" name="answer" value="1">창평지<br>
+            <input type="submit"  class="btn btn-success" value="답은 바로오! 눌러주시고!"> 
+
+          </form>
+      </article>
+      <!--=============================================question5-->
+      <article class="display-none">
+        <figure>
+          <p>5. 추억의 장소를 맞쳐 보세요</p>
+
+          <img src="5.jpg" alt="img" class="quizimg"> 
+        </figure>
+         <form action="#">
+            <input type="radio" name="answer" value="0">유후인<br>
+            <input type="radio" name="answer" value="0">창평지<br>
+            <input type="radio" name="answer" value="1">후쿠오카<br>
+            <input type="radio" name="answer" value="0">뱃부<br>
+            <input type="submit"  class="btn btn-success" value="답은 바로오! 눌러주시고!"> 
+
+          </form>
+      </article>
+      <!--=============================================question6-->
+       <article class="display-none">
+        <figure>
+         <p>
+           6. Which jQuery ?
+         </p>
+         <img src="6.jpg" alt="img" class="quizimg"> 
+       </figure>
+         <form action="#">
+            <input type="radio" name="answer" value="1">곰배령.jpg"><br>
+            <input type="radio" name="answer" value="0">jQuery.ajaxSetup()<br>
+            <input type="radio" name="answer" value="0">jQuery.ajaxAsync()<br>
+            <input type="submit"  class="btn btn-success" value="답은 바로오! 눌러주시고!"> 
+
+          </form>
+      </article>
+     <!--=============================================question7-->
+      <article class="display-none" >
+        <figure>
+        <p>
+         7. Which  loading?
+        </p>
+        <img src="7.jpg" alt="img" class="quizimg"> 
+      </figure>
+         <form action="#">
+            <input type="radio" name="answer" value="0"><img src="marado.jpg"><br>
+            <input type="radio" name="answer" value="1">일출봉<br>
+            <input type="radio" name="answer" value="0">$(document).load()<br>
+            <input type="submit"  class="btn btn-success" value="답은 바로오! 눌러주시고!"> 
+
+          </form>
+      </article>
+       <!--=============================================question8-->
+      <article class="display-none" >
+        <figure>
+          <p>
+            8. HTML code:
+          </p>
+          <p>
+            JavaScript code:
+          </p>
+          <img src="8.jpg" alt="img" class="quizimg"> 
+        </figure>
+        <form action="#" id="form8">
+            <input type="radio" name="answer" value="0"><img src="marado.jpg"><br>
+            <input type="radio" name="answer" value="1">오죽헌<br>
+            <input type="radio" name="answer" value="0">var button = $('button');<br>
+            <input type="radio" name="answer" value="0">var button = $('div > button');<br>
+            <input type="submit" id="button8" class="btn btn-success" value="답은 바로오! 눌러주시고!"> 
+          </form>
+      </article>
+      <!--=============================================question9-->
+       <article class="display-none" id="question9">
+          <figure>
+            <p>
+              9. You?
+            </p>
+           <img src="9.jpg" alt="img" class="quizimg">  
+         </figure>
+         <form action="#">
+            <input type="radio" name="answer" value="0"><img src="marado.jpg"><br>
+            <input type="radio" name="answer" value="0">get<br>
+            <input type="radio" name="answer" value="1">산굼부리<br>
+            <input type="radio" name="answer" value="0">load<br>
+            <input type="submit" class="btn btn-success" value="답은 바로오! 눌러주시고!"> 
+          </form>
+       </article>
+      <!--=============================================question10-->
+       <article class="display-none" id="question10"> 
+         <figure>
+           <p>
+            10. HTML code:use?<br>
+           </p>
+           <img src="10.jpg" alt="img" class="quizimg"> 
+         </figure>
+         <form action="#">
+            <input type="radio" name="answer" value="0"><img src="marado.jpg"><br>
+            <input type="radio" name="answer" value="0">$('#target').html('&ltinput type="text" id="full-name" /&gt');<br>
+            <input type="radio" name="answer" value="0">$('#target').after('&ltinput type="text" id="full-name" /&gt');<br>
+           <input type="radio" name="answer" value="1">봉은사<br>
+            <input type="submit"  class="btn btn-success" value="답은 바로오! 눌러주시고!"> 
+
+          </form>
+      </article>
+      
+      <!-- ===================================results-->
+      
+     
+  </div>   <!--the end of questions div-->
+
+
+    <p id="wrong" class="display-none">시간이 흘러 기억이 잘 안나시네요</p>
+  <p id="correct" class="display-none">딩 동 댕</p>
+ 
+      <div class="col-md-offset-3 col-xs-12 col-md-6">
+         <p class="display-none" id="resultsParagraph">테스트 결과입니다
+      <button type="button" id="result" class="btn btn-primary">눌러보세요</button><p>
+      
+       <p id="choose" class="display-none">답을 선택 해주세요!</p>
+        <!--<button id="nextQuestion" class="btn btn-primary display-none" >Next Question</button>-->
+        <button id="secondQuestion" class="btn btn-primary display-none" >다음으로 =></button>
+        
+        </div>
+</div>
+
+
+<h1 class="display-none text-center">얼마나 맞추었나요</h1>
+<div id="arrOfResults" class="text-center container-fluid">
+ <article id="low" class="display-none">
+   <p class="text-center">좀더 노력바랍니다.</p>
+   <img src="cover.jpg" alt="Sad Kitty" class="img-responsive center-block imageBorder" id="sadKitty">
+ </article> 
+  
+  <article id="intermediate" class="display-none">
+    <p>훌륭합니다! </p>
+    <img src="cover.jpg" alt="intermediateKitty" id="intermediateKitty" class="imageBorder img-responsive center-block">
+  </article> 
+  
+   <article id="advanced" class="display-none"> 
+     <p>완벽 하시네요!</p>
+     <img src="cover.jpg" alt="HapptCat" class="imageBorder img-responsive center-block">
+  </article> 
+</div>
+</main>
+
+  <footer>
+     <p> 퀴즈연습</p>
+  </footer>
+   <!-- <script src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-157cd5b220a5c80d4ff8e0e70ac069bffd87a61252088146915e8726e5d9f147.js"></script>-->
+
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+  <!--
+<script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js'></script>-->
+      <script id="rendered-js" >
+var result = 0;
+
+$(document).ready(function () {
+  $('#startButton').click(function () {
+    $('footer').slideUp(1500);
+    $('#mainContainer').slideUp(1500).promise().done(function () {
+      $('#question1').slideDown(1500);
+      $('.container').prepend('<h2>Question №1</h2>');
+
+    });
+  });
+  $('#form1').submit(function () {
+    var radioValue = $("#form1 :radio:checked").val();
+    if (radioValue == null)
+    {
+      $('#choose').slideDown();
+    } else
+    if (radioValue == 0) {
+
+      $('#choose').slideUp();
+      $('#wrong').removeClass('display-none');
+      $('#button1').slideUp();
+      $('#secondQuestion').slideDown(1000);
+    } else
+    {
+      result++;
+      $('#choose').slideUp();
+      $('#correct').removeClass('display-none');
+      $('#button1').slideToggle();
+      $('#secondQuestion').slideDown(1000);
+    }
+
+    return false;
+
+  });
+  var i = 0;
+
+  $('#secondQuestion').click(function () {
+    $('.container').children('h2').addClass('display-none');
+    $('.container').prepend('<h2>Question №' + (i + 2) + '</h2>');
+    var arr = $('#questions').children();
+    var currentQuestion = arr.get(i);
+    $(currentQuestion).slideUp(1000);
+    $('#wrong').addClass('display-none');
+    $('#correct').addClass('display-none');
+    var nextQuestion = arr.get(i + 1);
+    $(nextQuestion).slideDown(1000);
+    $('#secondQuestion').hide(1000);
+    $('.btn-success').removeClass('display-none');
+    var currentForm = $(nextQuestion).children().get(1);
+    $(currentForm).submit(function () {
+
+      var radioValue1 = $(this).children().filter(":checked").val();
+      if (radioValue1 == null)
+      {
+        $('#choose').slideDown();
+      } else
+      if (radioValue1 == 0) {
+        $('#choose').slideUp();
+        $('#wrong').removeClass('display-none');
+        if (i != 9) {
+          $('.btn-success').addClass('display-none');
+          $('#secondQuestion').show();} else
+        {
+          $('#resultsParagraph').removeClass('display-none');
+          $('.btn-success').addClass('display-none');
+        }
+      } else
+      {
+        result++;
+        $('#choose').slideUp();
+        $('#correct').removeClass('display-none');
+        if (i != 9) {$('.btn-success').addClass('display-none');
+          $('#secondQuestion').show();} else
+        {
+          $('#resultsParagraph').removeClass('display-none');
+          $('.btn-success').addClass('display-none');
+        }
+      }
+
+      return false;
+
+
+    });
+
+    i++;
+  });
+  $('#result').click(function () {
+    $('#test').hide();
+    $('#result').hide();
+    $('h1').removeClass('display-none');
+    if (result < 4) {
+      $('#low').removeClass('display-none');
+      $('#arrOfResults #low').prepend('<h3 class="text-center">10문제중 ' + result + ' 문제 맞추었네요!</h3>');
+    } else if (result < 8 && result > 3) {
+      $('#intermediate').removeClass('display-none');
+      $('#arrOfResults #intermediate').prepend('<h3 class="text-center">10문제중 ' + result + ' 문제 맞추었네요!</h3>');
+    } else
+    if (result > 7) {
+      $('#advanced').removeClass('display-none');
+      $('#arrOfResults #advanced').prepend('<h3 class="text-center">10문제중 ' + result + ' 문제 맞추었네요!</h3>');
+    }
+  });
+
+
+});
+//# sourceURL=pen.js
+    </script>
+
+  
+
+</body>
+
+</html>
+ 
