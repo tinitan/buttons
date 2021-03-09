@@ -7,7 +7,7 @@
   <meta charset="UTF-8">
  
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
->
+
   <title>quiz</title>
   
 <style>
@@ -29,9 +29,9 @@ body{
 }
 
 .quizimg{
-  overflow:cover;
+  /*overflow:cover;*/
   width: 100%;
-}
+ }
 
  footer {
   margin-top:1%;
@@ -76,10 +76,12 @@ font-size: 20px;
   margin-top:2%;
   margin-bottom:1%;
   text-align:center;
+  font-size: 20px;
 }
 
 .display-none{
   display:none; 
+  font-size: 20px;
 }
 .align-left{
   text-align:left;
@@ -134,13 +136,15 @@ main{
     <div id="questions">
       <!--=============================================question1-->
           <article id = "question1" class="display-none">
+            <figure>
                <div class="que-text"> <p>1. 다음 사진은 어디일까요?</p>
-                      <br>
+                     
                      <img src="1.jpg" alt="img" class="quizimg">
                  </div>
+      </figure>
+
       <div>
-        
-      <form id="form1" action="#">
+        <form id="form1" action="#">
         <input type="radio" name="answer" value="0">후쿠오카<br/>
         <input type="radio" name="answer" value="1">뱃부<br>
         <input type="radio" name="answer" value="0">소창성<br/>
@@ -153,10 +157,10 @@ main{
 <!--=============================================question2-->
   <article id = "question2" class="display-none"> 
       <figure>
-             <div>
+             <div class="que-text">
               <p>2. 어디 일까요?
               </p>  </div>
-              <p> 아름다운 기억을 떠올려 보세요!!</p> 
+              <p class="que-text"> 아름다운 기억을 떠올려 보세요!!</p> 
               
         <img src="2.jpg" alt="img" class="quizimg"> 
    
@@ -167,18 +171,18 @@ main{
             <input type="radio" name="answer" value="0">뱃부<br>
             <input type="radio" name="answer" value="1">소창성<br>
             <input type="radio" name="answer" value="0">창평지<br>
-         <input type="submit"  class="btn btn-success text-center" value="답은 바로오! 눌러주시고!"> 
+         <input type="submit"  class="btn btn-success" value="답은 바로오! 눌러주시고!"> 
 
           </form>
  
   </article>
       <!--=============================================question3-->
   <article class="display-none">
-    <figure>
-      <div>
+  <figure>
+      <div class="que-text">
       <p class="align-left">3. 기억을 떠올려 보시고 </p>
         </div>
-      <p>
+      <p class="que-text">
         맞추어 보세요 ^0^
       </p>
       <img src="3.jpg" alt="img" class="quizimg"> 
@@ -195,11 +199,11 @@ main{
       <!--=============================================question4-->
       <article class="display-none">
         <figure>
-           <p>4. 국내일까요?
+           <p class="que-text">4. 국내일까요?
                   <br>
                
       </p>
-          <p>
+          <p class="que-text">
             해외 일까요?
           </p>
           <img src="4.jpg" alt="img" class="quizimg"> 
@@ -216,7 +220,7 @@ main{
       <!--=============================================question5-->
       <article class="display-none">
         <figure>
-          <p>5. 추억의 장소를 맞쳐 보세요</p>
+          <p class="que-text">5. 추억의 장소를 맞쳐 보세요</p>
 
           <img src="5.jpg" alt="img" class="quizimg"> 
         </figure>
@@ -232,15 +236,17 @@ main{
       <!--=============================================question6-->
        <article class="display-none">
         <figure>
-         <p>
-           6. Which jQuery ?
+         <p class="que-text">
+           6. 다음은 국내입니다
          </p>
          <img src="6.jpg" alt="img" class="quizimg"> 
        </figure>
          <form action="#">
-            <input type="radio" name="answer" value="1">곰배령.jpg"><br>
-            <input type="radio" name="answer" value="0">jQuery.ajaxSetup()<br>
-            <input type="radio" name="answer" value="0">jQuery.ajaxAsync()<br>
+            <input type="radio" name="answer" value="1">곰배령<br>
+            <input type="radio" name="answer" value="0">일출봉<br>
+            <input type="radio" name="answer" value="0">오죽헌<br>
+            <input type="radio" name="answer" value="0">산굼부리<br>
+            
             <input type="submit"  class="btn btn-success" value="답은 바로오! 눌러주시고!"> 
 
           </form>
@@ -248,15 +254,16 @@ main{
      <!--=============================================question7-->
       <article class="display-none" >
         <figure>
-        <p>
-         7. Which  loading?
+        <p class="que-text">
+         7. 어디일까요?
         </p>
         <img src="7.jpg" alt="img" class="quizimg"> 
       </figure>
          <form action="#">
-            <input type="radio" name="answer" value="0"><img src="marado.jpg"><br>
+            <input type="radio" name="answer" value="0">곰배령<br>
             <input type="radio" name="answer" value="1">일출봉<br>
-            <input type="radio" name="answer" value="0">$(document).load()<br>
+            <input type="radio" name="answer" value="0">봉은사<br>
+            <input type="radio" name="answer" value="0">산굼부리<br>
             <input type="submit"  class="btn btn-success" value="답은 바로오! 눌러주시고!"> 
 
           </form>
@@ -264,50 +271,50 @@ main{
        <!--=============================================question8-->
       <article class="display-none" >
         <figure>
-          <p>
-            8. HTML code:
+          <p class="que-text">
+            8. 강릉일까?
           </p>
-          <p>
-            JavaScript code:
+          <p class="que-text">
+            제주도 일까?
           </p>
           <img src="8.jpg" alt="img" class="quizimg"> 
         </figure>
         <form action="#" id="form8">
-            <input type="radio" name="answer" value="0"><img src="marado.jpg"><br>
+            <input type="radio" name="answer" value="0">일출봉<br>
             <input type="radio" name="answer" value="1">오죽헌<br>
-            <input type="radio" name="answer" value="0">var button = $('button');<br>
-            <input type="radio" name="answer" value="0">var button = $('div > button');<br>
+            <input type="radio" name="answer" value="0">산굼부리<br>
+            <input type="radio" name="answer" value="0">봉은사<br>
             <input type="submit" id="button8" class="btn btn-success" value="답은 바로오! 눌러주시고!"> 
           </form>
       </article>
       <!--=============================================question9-->
        <article class="display-none" id="question9">
           <figure>
-            <p>
-              9. You?
+            <p class="que-text">
+              9. 어디일까요?
             </p>
            <img src="9.jpg" alt="img" class="quizimg">  
          </figure>
          <form action="#">
-            <input type="radio" name="answer" value="0"><img src="marado.jpg"><br>
-            <input type="radio" name="answer" value="0">get<br>
+            <input type="radio" name="answer" value="0">일출봉<br>
+            <input type="radio" name="answer" value="0">오죽헌<br>
             <input type="radio" name="answer" value="1">산굼부리<br>
-            <input type="radio" name="answer" value="0">load<br>
+            <input type="radio" name="answer" value="0">봉은사<br>
             <input type="submit" class="btn btn-success" value="답은 바로오! 눌러주시고!"> 
           </form>
        </article>
       <!--=============================================question10-->
        <article class="display-none" id="question10"> 
          <figure>
-           <p>
-            10. HTML code:use?<br>
+           <p class="que-text">
+            10. 마지막까지 잘 기억해보세요?<br>
            </p>
            <img src="10.jpg" alt="img" class="quizimg"> 
          </figure>
          <form action="#">
-            <input type="radio" name="answer" value="0"><img src="marado.jpg"><br>
-            <input type="radio" name="answer" value="0">$('#target').html('&ltinput type="text" id="full-name" /&gt');<br>
-            <input type="radio" name="answer" value="0">$('#target').after('&ltinput type="text" id="full-name" /&gt');<br>
+            <input type="radio" name="answer" value="0">일출봉<br>
+            <input type="radio" name="answer" value="0">오죽헌<br>
+            <input type="radio" name="answer" value="0">산굼부리<br>
            <input type="radio" name="answer" value="1">봉은사<br>
             <input type="submit"  class="btn btn-success" value="답은 바로오! 눌러주시고!"> 
 
@@ -323,12 +330,13 @@ main{
     <p id="wrong" class="display-none">시간이 흘러 기억이 잘 안나시네요</p>
   <p id="correct" class="display-none">딩 동 댕</p>
  
-      <div class="col-md-offset-3 col-xs-12 col-md-6">
-         <p class="display-none" id="resultsParagraph">테스트 결과입니다
+     
+        <div>
+         <p class="display-none" id="results">테스트 결과입니다
       <button type="button" id="result" class="btn btn-primary">눌러보세요</button><p>
       
        <p id="choose" class="display-none">답을 선택 해주세요!</p>
-        <!--<button id="nextQuestion" class="btn btn-primary display-none" >Next Question</button>-->
+        
         <button id="secondQuestion" class="btn btn-primary display-none" >다음으로 =></button>
         
         </div>
@@ -355,13 +363,11 @@ main{
 </main>
 
   <footer>
-     <p> 퀴즈연습</p>
+     <p></p>
   </footer>
-   <!-- <script src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-157cd5b220a5c80d4ff8e0e70ac069bffd87a61252088146915e8726e5d9f147.js"></script>-->
-
+   
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
-  <!--
-<script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js'></script>-->
+
       <script id="rendered-js" >
 var result = 0;
 
@@ -438,7 +444,7 @@ $(document).ready(function () {
         if (i != 9) {$('.btn-success').addClass('display-none');
           $('#secondQuestion').show();} else
         {
-          $('#resultsParagraph').removeClass('display-none');
+          $('#results').removeClass('display-none');/* 결과표시 */
           $('.btn-success').addClass('display-none');
         }
       }
@@ -469,7 +475,7 @@ $(document).ready(function () {
 
 
 });
-//# sourceURL=pen.js
+
     </script>
 
   
