@@ -1,0 +1,297 @@
+
+<!DOCTYPE html>
+<html lang="ko" >
+
+<head>
+
+  <meta charset="UTF-8">
+ 
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+
+  <title>quiz</title>
+  
+<style>
+
+
+.display-none{
+  display:none; 
+  font-size: 20px;
+}
+
+.jQueryImg{
+  margin-top: 3%;
+  margin-bottom:3%;
+  position: relative;
+  /*left: 50%;*/
+  display : block;
+  margin : auto;
+  overflow:cover;
+  width: 100%;
+}
+
+.quizimg{
+  /*overflow:cover;*/
+  width: 100%;
+ }
+
+</style>
+
+  <script>
+
+</script>
+
+
+</head>
+
+<body translate="no" >
+  <main>
+
+  <div>
+    <div id="quizmain">
+      
+        <img src="https://tinitan.github.io/jeju/assets/images/camel.jpg" alt="jQuery" class="jQueryImg">
+        <p class="cov-text">추억의 세계로 모십니다!</p>
+     
+      
+        <button id="quizstart">QUIZ 시작</button>
+
+    </div>
+  
+    <div id="questions">
+      <!--=============================================question1-->
+          <article id = "question1" class="display-none">
+            <figure>
+               <div class="que-text"> <p>1. 다음 사진은 어디일까요?</p>
+                     
+                     <img src="https://tinitan.github.io/jeju/assets/images/marado.jpg" alt="img" class="quizimg">
+                 </div>
+      </figure>
+
+      <div>
+        <form id="form1" action="#">
+        <input type="radio" name="answer" value="0">후쿠오카<br/>
+        <input type="radio" name="answer" value="1">뱃부<br>
+        <input type="radio" name="answer" value="0">소창성<br/>
+        <input type="radio" name="answer" value="0">창평지<br>
+        <input id="button1" type="submit" class="btn btn-success" value="답은 바로오! 눌러주시고!"> 
+          </form>      
+       </div>
+     
+      </article>
+<!--=============================================question2-->
+  <article id = "question2" class="display-none"> 
+      <figure>
+             <div class="que-text">
+              <p>2. 어디 일까요?
+              </p>  </div>
+              <p class="que-text"> 아름다운 기억을 떠올려 보세요!!</p> 
+              
+        <img src="https://tinitan.github.io/jeju/assets/images/songakmt.jpg" alt="img" class="quizimg"> 
+   
+    </figure>
+          <form id="form2" action="#">
+            
+            <input type="radio" name="answer" value="0">후쿠오카<br>
+            <input type="radio" name="answer" value="0">뱃부<br>
+            <input type="radio" name="answer" value="1">소창성<br>
+            <input type="radio" name="answer" value="0">창평지<br>
+         <input type="submit"  class="btn btn-success" value="답은 바로오! 눌러주시고!"> 
+
+          </form>
+ 
+  </article>
+      <!--=============================================question3-->
+  <article class="display-none">
+  <figure>
+      <div class="que-text">
+      <p class="align-left">3. 기억을 떠올려 보시고 </p>
+        </div>
+      <p class="que-text">
+        맞추어 보세요 ^0^
+      </p>
+      <img src="https://tinitan.github.io/jeju/assets/images/이테호우.jpg" alt="img" class="quizimg"> 
+    </figure>
+    <form action="#">
+            <input type="radio" name="answer" value="1">유휴인<br>
+            <input type="radio" name="answer" value="0">뱃부<br>
+            <input type="radio" name="answer" value="0">소창성<br>
+            <input type="radio" name="answer" value="0">후쿠오카<br>
+            <input type="submit"  class="btn btn-success" value="답은 바로오! 눌러주시고!"> 
+
+          </form>
+  </article>
+   
+      
+      <!-- ===================================results-->
+      
+     
+  </div>   <!--the end of questions div-->
+
+
+    <p id="wrong" class="display-none">시간이 흘러 기억이 잘 안나시네요</p>
+  <p id="correct" class="display-none">딩 동 댕</p>
+ 
+     
+        <div>
+         <p class="display-none" id="results">테스트 결과입니다 
+      <button type="button" id="result" class="btn btn-primary">눌러보세요</button></p>
+      
+       <p id="choose" class="display-none">답을 선택 해주세요!</p>
+        
+        <button id="secondQuestion" class="btn btn-primary display-none" >다음으로 =></button>
+        
+        </div>
+</div>
+<h1 class="display-none text-center">얼마나 맞추었나요</h1>
+
+
+ <div id="arrOfResults"> <!-- 점수에 따라 함수에 의거 평가 문구를 표시함 -->
+ <article id="low" class="display-none">
+   <p class="text-center">좀더 노력바랍니다.</p>
+   <img src="cover.jpg" alt="Sad">
+ </article> 
+  
+  <article id="intermediate" class="display-none">
+    <p>훌륭합니다! </p>
+    <img src="cover.jpg" alt="intermediate">
+  </article> 
+  
+   <article id="advanced" class="display-none"> 
+     <p>완벽 하시네요!</p>
+     <img src="cover.jpg" alt="Happ">
+  </article> 
+</div>
+
+
+</main>
+
+  <footer>
+     <p></p>
+  </footer>
+   
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script><!--jquery 외부연결 -->
+
+      <script id="rendered-js" >
+var result = 0;/* 정답 결과 합계 용 */
+
+$(document).ready(function () {
+  $('#quizstart').click(function () {/*퀴즈시작 버튼 */
+ 
+    $('#quizmain').slideUp(1500).promise().done(function () { /* 시작메뉴 숨기고 */
+      $('#question1').slideDown(1500); /* 문제 1 보이게 하기 */  
+   
+    });
+  });
+
+  $('#form1').submit(function () { /* 답선택과 정답 오답 표시 */
+    var radioValue = $("#form1 :radio:checked").val();
+    if (radioValue == null)
+    {
+      $('#choose').slideDown();
+    } else
+
+    if (radioValue == 0) {
+
+      $('#choose').slideUp();
+      $('#wrong').removeClass('display-none');
+      $('#button1').slideUp();
+      $('#secondQuestion').slideDown(1000);
+    } else 
+    {
+       result++;//* value 값이 1일경우 합산 */
+      $('#choose').slideUp();
+      $('#correct').removeClass('display-none');
+      $('#button1').slideToggle();
+      $('#secondQuestion').slideDown(1000);
+    }
+
+    return false;
+
+  });
+
+  var i = 0;
+
+  $('#secondQuestion').click(function () { /* 다음 문제로 가기 */
+  
+    var arr = $('#questions').children();
+
+    var currentQuestion = arr.get(i);/* questions1,2,3... 숨기기 */
+    $(currentQuestion).slideUp(1000);
+    $('#wrong').addClass('display-none');
+    $('#correct').addClass('display-none');
+
+    var nextQuestion = arr.get(i + 1);/* 다음 문제 나타내기 */
+    $(nextQuestion).slideDown(1000);
+    $('#secondQuestion').hide(1000);/* 다음으로 버튼 숨기기 */
+    $('.btn-success').removeClass('display-none');/* 다음문제 답 선택버튼 나타내기 */
+
+    var currentForm = $(nextQuestion).children().get(1);
+   
+    $(currentForm).submit(function () {/* 답선택 결과 제출 함수 */
+
+     var radioValue1 = $(this).children().filter(":checked").val();
+      if (radioValue1 == null)
+      {
+        $('#choose').slideDown();/* 선택하세요 */
+      } else
+
+
+      if (radioValue1 == 0) {
+        $('#choose').slideUp();
+        $('#wrong').removeClass('display-none');/*틀렸군요 */
+        if (i != 2) {/* 마지막 여부 확인 */
+          $('.btn-success').addClass('display-none');
+          $('#secondQuestion').show();} else
+        {
+          $('#results').removeClass('display-none');/* 결과표시 */
+          $('.btn-success').addClass('display-none');/*다음으로 버튼 숨기기 */
+        }
+      } else
+      {
+         result++;//* value 값이 1일경우 합산 */
+        $('#choose').slideUp();
+        $('#correct').removeClass('display-none');
+        if (i != 2) {
+          $('.btn-success').addClass('display-none');
+          $('#secondQuestion').show();} else
+        {
+          $('#results').removeClass('display-none');/* 결과표시 */
+          $('.btn-success').addClass('display-none');
+        }
+      }
+
+      return false;
+
+
+    });
+
+    i++; /* i != 마지막전 일때까지 증가 */
+  });
+  
+ $('#result').click(function () {
+   
+    $('#result').hide();
+    $('h1').removeClass('display-none');
+    if (result < 2) {
+      $('#low').removeClass('display-none');
+      $('#arrOfResults #low').prepend('<h3>3문제중 ' + result + ' 문제 맞추었네요!</h3>');
+    } else if (result < 3 && result >1) {
+      $('#intermediate').removeClass('display-none');
+      $('#arrOfResults #intermediate').prepend('<h3>3문제중 ' + result + ' 문제 맞추었네요!</h3>');
+    } else
+    if (result > 2) {
+      $('#advanced').removeClass('display-none');
+      $('#arrOfResults #advanced').prepend('<h3>3문제중 ' + result + ' 문제 맞추었네요!</h3>');
+    }
+  });
+
+});
+
+    </script>
+
+  
+
+</body>
+
+</html>
+ 
