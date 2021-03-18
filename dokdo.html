@@ -8,12 +8,9 @@
 	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
 	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 <style>
-   li { list-style:none; }
-  .picture { list-style:none; padding:0; margin:0; }
-  .picture li { float:left; width:50%;}
-  .picture li a {display:block; margin:5px; border: 1px }
-  .picture li img { display:block; width:50%;  height:auto;}
-  .picture li img:hover { display:block; width:100%;  height:auto;} 
+  img{
+       width: 100%;
+     }
 </style>
 </head>
 
@@ -21,15 +18,16 @@
 <div data-theme="b">
 	<div data-role="page" id="home">
 		<div data-role="header" data-theme="b">
-			<h1>독도 소개 앱</h1>
+			<h1>울릉도 소개 앱</h1>
 		</div>
 		<div data-role="content" style="text-align:center">
 				<img src="bgdokdo1.png" >
 			<ul data-role="listview" data-inset="true">
-				<li><a href="#intro">독도소개</a></li>
-				<li><a href="#movie" data-rel="dialog">독도영상</a></li>
-				<li><a href="#wizard3-1" data-rel="dialog">독도음악</a></li>
-				<li><a href="#gallery">독도사진</a></li>
+				<button><a href="#intro">울릉도 소개</a></button>
+				<li><a href="https://tinitan.github.io/ullungisland/" data-rel="dialog">울릉도 여행기</a></li>
+				<li><a href="ullungd.html">배편 & 안내도</a></li>
+				<li><a href="#gallery">추천할 만한곳</a></li>
+				<button><a href="#gallery">여행팁</a></button>
 			</ul>
 		</div>
 		
